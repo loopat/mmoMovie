@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.loopat.mmomovie.R;
 import com.squareup.picasso.Picasso;
@@ -39,7 +40,7 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 16;
+        return 20;
     }
 
     @Override
@@ -58,24 +59,36 @@ public class ImageAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ImageView imageView;
+        ViewHolder holder;
 
         if(convertView == null){
-            View view = mInflater.inflate(R.layout.list_item_layout,parent,false);
-            imageView = (ImageView)view.findViewById(R.id.list_item_image);
+
+            convertView = mInflater.inflate(R.layout.list_item_layout,parent,false);
+
+            holder = new ViewHolder();
+            holder.imageView = (ImageView)convertView.findViewById(R.id.list_item_image);
+
+            convertView.setTag(holder);
         } else{
-            imageView = (ImageView)convertView;
+            holder = (ViewHolder)convertView.getTag();
         }
 
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        holder.imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         //Log.v("Get Info","Get Info ==> Get View " + mImageUrl[position]);
         Picasso.with(mContext)
                 .load(mImageUrl[position])
                 //.resize(50,50)
                 //.centerCrop()
-                .into(imageView);
+                .into(holder.imageView);
 
-        return imageView;
+        return convertView;
+    }
+
+    /**
+     * Create ViewHolder to make the scrolling smoothly
+     */
+    static class ViewHolder{
+        ImageView imageView;
     }
 }

@@ -1,76 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_detailed"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
-    tools:context="com.example.lijian.mmomovie.DetailedActivity"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/Detailed_Title"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="7dp"
-        android:padding="7dp"
-        android:textSize="32sp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@color/colorPrimaryDark"
-        android:gravity="center_vertical"
-        android:layout_weight="1"/>
-    <LinearLayout
+    android:background="@color/colorDetailScrollView"
+    android:fillViewport="true">
 
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="7dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginTop="20dp"
-
-        android:layout_weight="3"
-        android:gravity="center_vertical"
-        >
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+        <TextView
+            android:id="@+id/Detailed_Title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin"
+            android:padding="@dimen/padding"
+            android:textSize="@dimen/FontSize"
+            android:fontFamily="serif-monospace"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center_vertical"
+            android:layout_weight="1"/>
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Detailed_Image"
-                android:padding="7dp"
-                android:paddingLeft="0dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></ImageView>
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin"
+            android:layout_marginBottom="@dimen/detail_bottom"
+            android:layout_marginTop="@dimen/detail_up"
 
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            >
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/Detailed_Date"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:padding="7dp"
-                    android:text="Date"/>
-                <TextView
-                    android:id="@+id/Detailed_Scroe"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="3"
-                    android:padding="7dp"
-                    android:text="Score"/>
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/Detailed_Image"
+                    android:padding="@dimen/padding"
+                    android:paddingLeft="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></ImageView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/Detailed_Date"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:padding="@dimen/padding"
+                        android:text="Date"/>
+                    <TextView
+                        android:id="@+id/Detailed_Scroe"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:padding="@dimen/padding"
+                        android:text="Score"/>
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-    <TextView
-        android:id="@+id/Detailed_Intro"
-        android:padding="7dp"
-        android:layout_margin="7dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"/>
+        <TextView
+            android:id="@+id/Detailed_Intro"
+            android:padding="@dimen/padding"
+            android:layout_margin="@dimen/margin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"/>
+    </TableLayout>
 
-</LinearLayout>
+
+
+</ScrollView>

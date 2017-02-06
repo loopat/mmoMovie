@@ -27,6 +27,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.loopat.mmomovie.BuildConfig;
+import com.example.loopat.mmomovie.ImageAdapter;
 import com.example.loopat.mmomovie.R;
 import com.example.loopat.mmomovie.SettingsActivity;
 import com.squareup.picasso.Picasso;
@@ -65,7 +66,7 @@ public class movielistFragment extends Fragment {
      */
 
 
-    private final int ITEM_NUMS = 16;
+    private final int ITEM_NUMS = 20;
     private final int DETAIL_ITMES = 5;
 
     //For Test Image show
@@ -79,7 +80,7 @@ public class movielistFragment extends Fragment {
     List<String[]> mListDetail = new ArrayList<String[]>();
 
     GridView mGridView;
-    com.example.loopat.mmomovie.ImageAdapter mImageAdapter;
+    ImageAdapter mImageAdapter;
 
     FetchMovieInfoTask fetchMovieInfoTask;
 

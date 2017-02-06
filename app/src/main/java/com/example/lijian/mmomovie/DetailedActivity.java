@@ -18,11 +18,13 @@ public class DetailedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed);
 
-        String []detailStr = getIntent().getStringArrayExtra("Movie Detail");
+        Intent intent = getIntent();
 
-//        for(String str : detailStr){
-//            Log.v("Get Info", "Get Info " + str);
-//        }
+        String []detailStr = intent.getStringArrayExtra("Movie Detail");
+
+        if(detailStr == null){
+            return;
+        }
 
         TextView tilteView = (TextView)findViewById(R.id.Detailed_Title);
         tilteView.setText(detailStr[0]);
@@ -46,3 +48,5 @@ public class DetailedActivity extends AppCompatActivity {
         dateView.setText("Date :" + detailStr[4]);
     }
 }
+
+
