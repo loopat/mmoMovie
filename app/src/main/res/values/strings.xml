@@ -15,4 +15,11 @@
     <string name="settings_sort_label_pop">Sort By Popular</string>
     <string name="setting_sort_items_value_top_rated">top_rated</string>
     <string name="setting_sort_items_value_popular">popular</string>
+
+    <string name="intent_key">Movie Detail</string>
+
+    <!--For Detailed activity show -->
+    <string name="detailed_score">Score: </string>
+    <string name="detailed_date">Date :</string>
+    <string name="detailed_no_detail">No details.</string>
 </resources>

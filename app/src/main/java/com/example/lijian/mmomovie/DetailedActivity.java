@@ -1,4 +1,4 @@
-package com.example.loopat.mmomovie;
+package com.example.lijian.mmomovie;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.loopat.mmomovie.R;
+import com.example.lijian.mmomovie.R;
 import com.squareup.picasso.Picasso;
 
 public class DetailedActivity extends AppCompatActivity {
@@ -20,7 +20,7 @@ public class DetailedActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String []detailStr = intent.getStringArrayExtra("Movie Detail");
+        String []detailStr = intent.getStringArrayExtra(getString(R.string.intent_key));
 
         if(detailStr == null){
             return;
@@ -37,15 +37,15 @@ public class DetailedActivity extends AppCompatActivity {
         TextView introView = (TextView)findViewById(R.id.Detailed_Intro);
 
         if(detailStr[2].length() == 0){
-            detailStr[2] = "No details.";
+            detailStr[2] = getString(R.string.detailed_no_detail);
         }
         introView.setText(detailStr[2]);
 
         TextView scoreView = (TextView)findViewById(R.id.Detailed_Scroe);
-        scoreView.setText("Score: " + detailStr[3]);
+        scoreView.setText(getString(R.string.detailed_score) + detailStr[3]);
 
         TextView dateView = (TextView)findViewById(R.id.Detailed_Date);
-        dateView.setText("Date :" + detailStr[4]);
+        dateView.setText(getString(R.string.detailed_date) + detailStr[4]);
     }
 }
 

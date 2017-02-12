@@ -1,4 +1,4 @@
-package com.example.loopat.mmomovie;
+package com.example.lijian.mmomovie;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -18,8 +18,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.loopat.mmomovie.R;
-import com.example.loopat.mmomovie.movielistFragment;
+import com.example.lijian.mmomovie.R;
+import com.example.lijian.mmomovie.movieListFragment;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -54,16 +54,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Test Picasso
-//        ImageView  mImageView = (ImageView)findViewById(R.id.test);
-//        String internalUrl = "http://image.tmdb.org/t/p/w185//nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg";
-//        Picasso.with(this).load(internalUrl).into(mImageView);
-
         if(savedInstanceState == null){
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            fragmentTransaction.add(R.id.container_main,new movielistFragment());//1st para is id of container
+            fragmentTransaction.add(R.id.container_main,new movieListFragment());//1st para is id of container
             fragmentTransaction.commit();
         }
     }

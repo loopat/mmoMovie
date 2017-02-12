@@ -1,4 +1,4 @@
-package com.example.loopat.mmomovie;
+package com.example.lijian.mmomovie;
 
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.loopat.mmomovie.R;
+import com.example.lijian.mmomovie.R;
 
 public class SettingsActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener{

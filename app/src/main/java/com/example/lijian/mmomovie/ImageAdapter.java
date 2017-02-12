@@ -1,4 +1,4 @@
-package com.example.loopat.mmomovie;
+package com.example.lijian.mmomovie;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.loopat.mmomovie.R;
+import com.example.lijian.mmomovie.R;
 import com.squareup.picasso.Picasso;
 
 public class ImageAdapter extends BaseAdapter {

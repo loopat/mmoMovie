@@ -13,7 +13,7 @@
             android:id="@+id/movieslistview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:numColumns="2"
+            android:numColumns="auto_fit"
             android:verticalSpacing="0dp"
             android:horizontalSpacing="0dp"
             android:stretchMode="columnWidth"

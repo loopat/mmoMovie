@@ -1,4 +1,4 @@
-package com.example.loopat.mmomovie;
+package com.example.lijian.mmomovie;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,10 +26,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.loopat.mmomovie.BuildConfig;
-import com.example.loopat.mmomovie.ImageAdapter;
-import com.example.loopat.mmomovie.R;
-import com.example.loopat.mmomovie.SettingsActivity;
+import com.example.lijian.mmomovie.BuildConfig;
+import com.example.lijian.mmomovie.ImageAdapter;
+import com.example.lijian.mmomovie.R;
+import com.example.lijian.mmomovie.SettingsActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -50,7 +50,7 @@ import java.util.List;
 import static android.R.id.list;
 
 //import android.app.Fragment package;
-public class movielistFragment extends Fragment {
+public class movieListFragment extends Fragment {
 
 
     /**
@@ -84,7 +84,7 @@ public class movielistFragment extends Fragment {
 
     FetchMovieInfoTask fetchMovieInfoTask;
 
-    public movielistFragment(){
+    public movieListFragment(){
         setHasOptionsMenu(true);
     }
 
@@ -168,7 +168,7 @@ public class movielistFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_movielist,container,false);
         mGridView = (GridView) rootView.findViewById(R.id.movieslistview);
 
-        mImageAdapter = new com.example.loopat.mmomovie.ImageAdapter(getActivity(),mStrMovieImageUrl);
+        mImageAdapter = new com.example.lijian.mmomovie.ImageAdapter(getActivity(),mStrMovieImageUrl);
         mGridView.setAdapter(mImageAdapter);
 
         //GridView Item Click Event
@@ -179,14 +179,10 @@ public class movielistFragment extends Fragment {
                 Toast.makeText(getActivity(),"Item position is : " + i, Toast.LENGTH_SHORT).show();
 
                 // Start detailed activity
-                Intent intent = new Intent(getActivity(), com.example.loopat.mmomovie.DetailedActivity.class)
-                        .putExtra("Movie Detail",mListDetail.get(i));
+                Intent intent = new Intent(getActivity(), com.example.lijian.mmomovie.DetailedActivity.class)
+                        .putExtra(getString(R.string.intent_key),mListDetail.get(i));
 
                 String []detailStr = mListDetail.get(i);
-
-//                for(String str : detailStr){
-//                    Log.v("Get Info", "Get Info " + str);
-//                }
 
                 startActivity(intent);
             }
@@ -214,7 +210,7 @@ public class movielistFragment extends Fragment {
         );
 
         String resultStr="";
-//      String strUrl = "http://api.themoviedb.org/3/movie/top_rated?language=zh&api_key=XXXXXXXX";
+        //"http://api.themoviedb.org/3/movie/top_rated?language=zh&api_key=XXXXXXXX";
         String strUrl = MOVIE_BASE_URL + str + MOVIE_LANGUAGE + MOVIE_API_KEY
                 + BuildConfig.THE_MOVIE_DB_API_KEY;
 
@@ -253,7 +249,7 @@ public class movielistFragment extends Fragment {
             }
         } catch(IOException e){
             e.printStackTrace();
-            //Log.v("Get Info", "Get Info IOException " + e.toString());
+
         } finally {
 
             if(reader != null){
